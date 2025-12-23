@@ -91,7 +91,7 @@
         bgMusic.loop = true; bgMusic.volume = 1.0;
 
         const loader = new THREE.TextureLoader();
-        const photoFiles = ['./image1.jpg', './image2.jpg', './image3.jpg', './image4.jpg', './image5.jpeg'];
+        const photoFiles = ['./image1.jpg', './image2.jpg', './image3.jpg', './image4.jpg', './image5.jpg'];
         const photoTextures = [];
         photoFiles.forEach((f, i) => photoTextures[i] = loader.load(f));
 
@@ -388,7 +388,7 @@
             } else {
                 // EXPLODE
                 group.scale.set(1,1,1);
-                group.rotation.y += (handRotY - group.rotation.y) * 0.1;
+                group.rotation.y += (handRotY - group.rotation.y) * 0.25;
 
                 // size, color
                 for(let i=0; i<count; i++) {
@@ -410,7 +410,7 @@
             requestAnimationFrame(animate);
             const time = Date.now() * 0.001;
             const speed = 0.08;
-            const handRotY = (handX - 0.5) * 10.0;
+            const handRotY = (0.5 - handX) * (Math.PI * 4);
 
             updateParticleGroup(groupGold, 'gold', state, speed, handRotY, time);
             updateParticleGroup(groupRed, 'red', state, speed, handRotY, time);
