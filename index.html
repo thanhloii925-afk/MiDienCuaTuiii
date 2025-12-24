@@ -373,7 +373,7 @@
 
             } else if (targetState === 'HEART') {
                 group.rotation.y = 0;
-                const beatScale = 1 + Math.abs(Math.sin(time * 3)) * 0.05;
+                const beatScale = 1 + Math.abs(Math.sin(time * 3)) * 0.1;
                 group.scale.set(beatScale, beatScale, beatScale);
 
                 // Vandiep
@@ -388,7 +388,7 @@
             } else {
                 // EXPLODE
                 group.scale.set(1,1,1);
-                group.rotation.y += (handRotY - group.rotation.y) * 0.1;
+                group.rotation.y += (handRotY - group.rotation.y) * 0.15;
 
                 // size, color
                 for(let i=0; i<count; i++) {
