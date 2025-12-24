@@ -385,7 +385,7 @@
             } else {
                 // EXPLODE
                 group.scale.set(1,1,1);
-                group.rotation.y += (handRotY - group.rotation.y) * 0.1;
+                group.rotation.y += (handRotY - group.rotation.y) * 0.2;
 
                 // size, color
                 for(let i=0; i<count; i++) {
@@ -407,7 +407,7 @@
             requestAnimationFrame(animate);
             const time = Date.now() * 0.001;
             const speed = 0.08;
-            const handRotY = (handX - 0.5) * 2.0;
+           const handRotY = (0.5 - handX) * (Math.PI * 4);
             updateParticleGroup(groupGold, 'gold', state, speed, handRotY, time);
             updateParticleGroup(groupRed, 'red', state, speed, handRotY, time);
             updateParticleGroup(groupGift, 'gift', state, speed, handRotY, time);
